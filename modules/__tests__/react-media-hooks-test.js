@@ -38,6 +38,6 @@ describe('rendered on the server', () => {
     it('returns a value', () => {
       const mediaHook = testHook(useMediaHook);
 
-      expect(mediaHook.val).toMatch(true);
+      expect(mediaHook).toEqual({val: true});
     });
   });

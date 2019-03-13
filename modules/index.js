@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import MediaQueryList from './MediaQueryList';
 
   
-export const useMediaHook = () => {
-    console.log('analytics, useMediaHook')
+export const useMediaHook = (query) => {
+
     const [isMobile, setIsMobile] = useState(null);
 
-    const mobileQuery = 'only screen and (max-width: 992px)'
+    const mobileQuery = query || 'only screen and (max-width: 992px)'
 
     function updateMatches() {
         const { matches } = mediaQueryList;
