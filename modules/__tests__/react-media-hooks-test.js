@@ -1,39 +1,40 @@
 import React from 'react';
-import {render, cleanup} from 'react-testing-library'
+import { render, cleanup } from 'react-testing-library';
 
 import { useMediaHook } from '../index';
 
 function createMockMediaMatcher(matches) {
-    return () => ({
-      matches,
-      addListener: () => {},
-      removeListener: () => {}
-    });
-  }
-  
+  return () => ({
+    matches,
+    addListener: () => {},
+    removeListener: () => {},
+  });
+}
+
 function testHook(useHook, props) {
-    const RenderProp = ({children, ...rest}) => children(useHook(rest))
-    const returnVal = {}
-    render(
-      <RenderProp {...props}>
-        {val => {
-          // may need some special treatment if the
-          // return value is not an object of values...
-          console.log('testHook, return value: ', val)
-          let values = {val}
-          Object.assign(returnVal, values)
-          return null
-        }}
-      </RenderProp>,
+  const RenderProp = ({ children, ...rest }) => children(useHook(rest))
+  const returnVal = {}
+  render(
+    <RenderProp {...props}>
+      { (val) => {
+        // may need some special treatment if the
+        // return value is not an object of values...
+        console.log('testHook, return value: ', val) // eslint-disable-line no-console
+        let values = {val}
+        Object.assign(returnVal, values)
+        return null
+    }}
+    </RenderProp>,
     )
-    return returnVal
-  }
-  
+  return returnVal
+}
+
 describe('rendered on the server', () => {
     beforeEach(() => {
       window.matchMedia = createMockMediaMatcher(true);
-
     });
+
+    afterEach(cleanup)
 
     it('returns a value', () => {
       const mediaHook = testHook(useMediaHook);
