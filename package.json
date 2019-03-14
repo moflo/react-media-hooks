@@ -8,7 +8,7 @@
   "files": [
     "cjs",
     "esm",
-    "umd",
+    "umd"
   ],
   "scripts": {
     "build": "rollup -c",
