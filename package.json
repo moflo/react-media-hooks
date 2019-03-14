@@ -1,6 +1,6 @@
 {
   "name": "react-media-hooks",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React Hooks version of react-media",
   "main": "index.js",
   "module": "esm/react-media.js",
