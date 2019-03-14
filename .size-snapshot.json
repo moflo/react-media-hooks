@@ -1,8 +1,8 @@
 {
   "esm/react-media-hooks.js": {
-    "bundled": 2000,
-    "minified": 818,
-    "gzipped": 390,
+    "bundled": 1971,
+    "minified": 787,
+    "gzipped": 378,
     "treeshaked": {
       "rollup": {
         "code": 14,
@@ -14,13 +14,13 @@
     }
   },
   "umd/react-media-hooks.js": {
-    "bundled": 2580,
-    "minified": 1054,
-    "gzipped": 527
+    "bundled": 2478,
+    "minified": 998,
+    "gzipped": 498
   },
   "umd/react-media-hooks.min.js": {
-    "bundled": 2580,
-    "minified": 1054,
-    "gzipped": 527
+    "bundled": 2478,
+    "minified": 998,
+    "gzipped": 498
   }
 }
